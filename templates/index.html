@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Job Detection Dashboard</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #f4f7fa;
+            --card-bg: #ffffff;
+            --text-color: #2b3a4a;
+            --text-muted: #6c7a89;
+            --border-color: #e2e8f0;
+            --primary-gradient: linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%);
+            --accent-color: #4f46e5;
+            --shadow: 0 10px 30px rgba(79, 70, 229, 0.05);
+            --shadow-hover: 0 15px 35px rgba(79, 70, 229, 0.1);
+            --card-border-radius: 16px;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-color: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #334155;
+            --primary-gradient: linear-gradient(135deg, #6366f1 0%, #3b82f6 100%);
+            --accent-color: #818cf8;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+            --shadow-hover: 0 15px 35px rgba(0, 0, 0, 0.35);
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Poppins', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            min-height: 100vh;
+        }
+
+        h1, h2, h3, h4, h5, h6, .font-outfit {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        /* Glassmorphic Navbar */
+        .navbar-custom {
+            background-color: rgba(var(--card-bg), 0.7);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            transition: background-color 0.3s ease;
+        }
+
+        .card-custom {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--card-border-radius);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+            overflow: hidden;
+        }
+
+        .card-custom:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* Stats Cards styling */
+        .stat-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        /* Custom buttons */
+        .btn-gradient {
+            background: var(--primary-gradient);
+            color: #ffffff;
+            border: none;
+            border-radius: 10px;
+            padding: 12px 24px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-gradient:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+            color: #ffffff;
+            filter: brightness(1.1);
+        }
+
+        /* Form styling */
+        .form-control-custom {
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            border-radius: 10px;
+            padding: 12px 16px;
+            transition: all 0.3s ease;
+        }
+
+        .form-control-custom:focus {
+            background-color: var(--card-bg);
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+            color: var(--text-color);
+            outline: none;
+        }
+
+        textarea.form-control-custom {
+            resize: vertical;
+        }
+
+        /* Results panel styling */
+        .result-badge {
+            font-size: 1.5rem;
+            font-weight: 800;
+            padding: 10px 20px;
+            border-radius: 12px;
+            display: inline-block;
+        }
+
+        .badge-real {
+            background-color: rgba(16, 185, 129, 0.15);
+            color: #10b981;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        .badge-fake {
+            background-color: rgba(239, 68, 68, 0.15);
+            color: #ef4444;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+
+        /* Gauge / Progress meters */
+        .progress-meter {
+            height: 12px;
+            border-radius: 6px;
+            background-color: var(--border-color);
+            overflow: hidden;
+        }
+
+        /* Theme Toggle */
+        .theme-toggle-btn {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.25rem;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s;
+        }
+
+        .theme-toggle-btn:hover {
+            background-color: var(--border-color);
+        }
+
+        /* Scanning animation overlay */
+        .scan-container {
+            display: none;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .scanner {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 30px;
+            position: relative;
+            background: rgba(79, 70, 229, 0.05);
+            border: 2px solid var(--accent-color);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .scanner::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 4px;
+            background: var(--accent-color);
+            position: absolute;
+            top: 0;
+            left: 0;
+            box-shadow: 0 0 10px var(--accent-color);
+            animation: scan 2s linear infinite;
+        }
+
+        @keyframes scan {
+            0% { top: 0%; }
+            50% { top: 100%; }
+            100% { top: 0%; }
+        }
+
+        /* Keyword badges */
+        .keyword-badge {
+            background-color: rgba(245, 158, 11, 0.1);
+            color: #f59e0b;
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 8px;
+            padding: 6px 12px;
+            font-weight: 500;
+            display: inline-block;
+            margin: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .keyword-badge:hover {
+            background-color: #f59e0b;
+            color: #ffffff;
+            transform: scale(1.05);
+        }
+
+        /* Navigation Pills */
+        .nav-pills .nav-link {
+            color: var(--text-color);
+            border-radius: 10px;
+            padding: 10px 20px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .nav-pills .nav-link.active {
+            background: var(--primary-gradient);
+            color: #ffffff;
+        }
+
+        /* Table custom styling */
+        .table-custom {
+            color: var(--text-color);
+        }
+
+        .table-custom th {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            border-bottom: 2px solid var(--border-color);
+            color: var(--text-muted);
+        }
+
+        .table-custom td {
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: middle;
+        }
+
+        /* Custom alert */
+        .alert-custom {
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid;
+        }
+
+        /* Image hover zoom */
+        .chart-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .chart-container {
+            overflow: hidden;
+            border-radius: 8px;
+            background: #ffffff;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+        }
+        
+        .chart-container:hover .chart-img {
+            transform: scale(1.03);
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header Navigation -->
+<nav class="navbar navbar-expand-lg navbar-custom sticky-top mb-4">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+            <i class="bi bi-shield-check text-primary fs-3 me-2"></i>
+            <span class="fw-bold fs-4 tracking-tight">VeriWork AI</span>
+        </a>
+        <div class="d-flex align-items-center ms-auto">
+            <button class="theme-toggle-btn me-2" id="theme-toggle" title="Toggle Light/Dark Mode">
+                <i class="bi bi-moon-fill" id="theme-icon"></i>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<div class="container pb-5">
+    
+    <!-- Hero / Top Section -->
+    <div class="row mb-4">
+        <div class="col-lg-8">
+            <h1 class="fw-extrabold display-6 text-gradient mb-1">Fake Job Detection Dashboard</h1>
+            <p class="text-muted">Analyze employment listings in real-time with optimized machine learning algorithms.</p>
+        </div>
+    </div>
+
+    <!-- Stats Bar -->
+    {% if stats %}
+    <div class="row g-4 mb-5">
+        <div class="col-md-3">
+            <div class="card-custom p-4 d-flex align-items-center justify-content-between">
+                <div>
+                    <h6 class="text-muted text-uppercase mb-1">Total Scans</h6>
+                    <h3 class="fw-bold mb-0">{{ stats.total_scans }}</h3>
+                </div>
+                <div class="stat-icon bg-primary-subtle text-primary">
+                    <i class="bi bi-search"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card-custom p-4 d-flex align-items-center justify-content-between">
+                <div>
+                    <h6 class="text-muted text-uppercase mb-1">Flagged Fake</h6>
+                    <h3 class="fw-bold mb-0 text-danger">{{ stats.fake_count }}</h3>
+                </div>
+                <div class="stat-icon bg-danger-subtle text-danger">
+                    <i class="bi bi-exclamation-triangle-fill"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card-custom p-4 d-flex align-items-center justify-content-between">
+                <div>
+                    <h6 class="text-muted text-uppercase mb-1">Genuine Identified</h6>
+                    <h3 class="fw-bold mb-0 text-success">{{ stats.real_count }}</h3>
+                </div>
+                <div class="stat-icon bg-success-subtle text-success">
+                    <i class="bi bi-patch-check-fill"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card-custom p-4 d-flex align-items-center justify-content-between">
+                <div>
+                    <h6 class="text-muted text-uppercase mb-1">Average Risk Score</h6>
+                    <h3 class="fw-bold mb-0 {% if stats.avg_risk > 70 %}text-danger{% elif stats.avg_risk > 35 %}text-warning{% else %}text-success{% endif %}">
+                        {{ stats.avg_risk }}%
+                    </h3>
+                </div>
+                <div class="stat-icon bg-warning-subtle text-warning">
+                    <i class="bi bi-percent"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Error Alerts -->
+    {% if error %}
+    <div class="alert alert-danger alert-dismissible fade show alert-custom" role="alert">
+        <i class="bi bi-exclamation-octagon-fill me-2"></i> <strong>Error:</strong> {{ error }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endif %}
+
+    <!-- Main Navigation Tabs -->
+    <ul class="nav nav-pills mb-4" id="mainTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="analyze-tab" data-bs-toggle="tab" data-bs-target="#analyze" type="button" role="tab" aria-controls="analyze" aria-selected="true">
+                <i class="bi bi-laptop me-2"></i>Job Analyzer
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="history-tab" data-bs-toggle="tab" data-bs-target="#history" type="button" role="tab" aria-controls="history" aria-selected="false">
+                <i class="bi bi-clock-history me-2"></i>Prediction History
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="analytics-tab" data-bs-toggle="tab" data-bs-target="#analytics" type="button" role="tab" aria-controls="analytics" aria-selected="false">
+                <i class="bi bi-graph-up-arrow me-2"></i>Model Performance
+            </button>
+        </li>
+    </ul>
+
+    <!-- Tab Contents -->
+    <div class="tab-content" id="mainTabContent">
+        
+        <!-- Analyzer Tab -->
+        <div class="tab-pane fade show active" id="analyze" role="tabpanel" aria-labelledby="analyze-tab">
+            <div class="row g-4">
+                
+                <!-- Input Form Card -->
+                <div class="col-lg-7">
+                    <div class="card-custom p-4">
+                        <h4 class="fw-bold mb-3 d-flex align-items-center">
+                            <i class="bi bi-clipboard2-pulse text-primary me-2"></i> New Analysis
+                        </h4>
+                        
+                        <form id="predict-form" action="/predict" method="POST">
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Job Title <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control form-control-custom" name="title" placeholder="e.g. Remote Data Entry Operator" required 
+                                       value="{{ result.title if result else '' }}">
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Company Profile</label>
+                                <textarea class="form-control form-control-custom" name="company_profile" rows="3" placeholder="Paste information about the company profile here...">{{ result.company if result else '' }}</textarea>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Job Description <span class="text-danger">*</span></label>
+                                <textarea class="form-control form-control-custom" name="description" rows="5" placeholder="Paste full job description text here..." required></textarea>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Requirements</label>
+                                <textarea class="form-control form-control-custom" name="requirements" rows="4" placeholder="List any job requirements or prerequisites..."></textarea>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Benefits</label>
+                                <textarea class="form-control form-control-custom" name="benefits" rows="3" placeholder="List salary, compensation details, and benefits offered..."></textarea>
+                            </div>
+                            
+                            <div class="d-grid mt-4">
+                                <button type="submit" class="btn btn-gradient btn-lg" id="submit-btn">
+                                    <i class="bi bi-search me-2"></i> Run Fraud Analysis
+                                </button>
+                            </div>
+                        </form>
+
+                        <!-- Scanning State Overlay -->
+                        <div class="scan-container" id="scanner-view">
+                            <div class="scanner"></div>
+                            <h4 class="fw-bold">Scanning Listing...</h4>
+                            <p class="text-muted">Analyzing structure, vocabulary, TF-IDF weights, and matching metadata markers.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Analysis Results Panel -->
+                <div class="col-lg-5">
+                    
+                    {% if result %}
+                    <!-- Display prediction results if returned -->
+                    <div class="card-custom p-4 border border-2 border-opacity-50 {% if result.prediction == 1 %}border-danger{% else %}border-success{% endif %}">
+                        <div class="text-center mb-4">
+                            <h5 class="text-muted text-uppercase mb-2">Verdict</h5>
+                            {% if result.prediction == 1 %}
+                                <div class="result-badge badge-fake mb-2">
+                                    <i class="bi bi-x-circle-fill me-2"></i> FAKE POSTING
+                                </div>
+                            {% else %}
+                                <div class="result-badge badge-real mb-2">
+                                    <i class="bi bi-check-circle-fill me-2"></i> REAL POSTING
+                                </div>
+                            {% endif %}
+                            <h6 class="text-muted mt-2">{{ result.title }}</h6>
+                        </div>
+
+                        <hr class="my-4">
+
+                        <!-- Confidence Meter -->
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                <span class="fw-semibold">Model Prediction Confidence</span>
+                                <span class="fw-bold text-primary">{{ result.confidence }}%</span>
+                            </div>
+                            <div class="progress-meter">
+                                <div class="progress-bar bg-primary" role="progressbar" style="width: {{ result.confidence }}%"></div>
+                            </div>
+                        </div>
+
+                        <!-- Risk Meter -->
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                <span class="fw-semibold">Fraud Risk Score</span>
+                                <span class="fw-bold {% if result.risk_score > 70 %}text-danger{% elif result.risk_score > 35 %}text-warning{% else %}text-success{% endif %}">
+                                    {{ result.risk_score }}% ({{ result.risk_level }})
+                                </span>
+                            </div>
+                            <div class="progress-meter">
+                                <div class="progress-bar {% if result.risk_score > 70 %}bg-danger{% elif result.risk_score > 35 %}bg-warning{% else %}bg-success{% endif %}" 
+                                     role="progressbar" style="width: {{ result.risk_score }}%"></div>
+                            </div>
+                        </div>
+
+                        <!-- Triggered flags -->
+                        {% if result.flags %}
+                        <div class="mb-4">
+                            <span class="fw-semibold d-block mb-2 text-warning"><i class="bi bi-exclamation-triangle-fill"></i> Suspicious Flags Detected:</span>
+                            <ul class="list-unstyled mb-0 text-muted ps-2 border-start border-warning border-3">
+                                {% for flag in result.flags %}
+                                    <li class="mb-1"><small>• {{ flag }}</small></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        {% endif %}
+
+                        <!-- Suspicious Keywords -->
+                        <div class="mb-4">
+                            <span class="fw-semibold d-block mb-2">Suspicious Terms Matched:</span>
+                            <div class="d-flex flex-wrap">
+                                {% if result.suspicious_keywords %}
+                                    {% for word in result.suspicious_keywords %}
+                                        <span class="keyword-badge">{{ word }}</span>
+                                    {% endfor %}
+                                {% else %}
+                                    <span class="text-muted"><small>No major suspicious terms detected.</small></span>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <!-- User recommendations -->
+                        <div class="p-3 bg-light rounded-3 border-start border-4 border-info">
+                            <span class="fw-bold text-info d-block mb-2"><i class="bi bi-info-circle-fill"></i> Protective Measures:</span>
+                            <ul class="list-unstyled mb-0" style="font-size: 0.85rem;">
+                                {% for rec in result.recommendations %}
+                                    <li class="mb-2 d-flex align-items-start">
+                                        <i class="bi bi-shield-exclamation text-info me-2 mt-0.5"></i>
+                                        <span>{{ rec }}</span>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+
+                    </div>
+                    {% else %}
+                    <!-- Empty / Info Panel -->
+                    <div class="card-custom p-5 text-center d-flex flex-column align-items-center justify-content-center h-100 min-vh-50">
+                        <div class="bg-primary-subtle text-primary rounded-circle p-4 mb-4" style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
+                            <i class="bi bi-cpu fs-1"></i>
+                        </div>
+                        <h4 class="fw-bold">Ready for Analysis</h4>
+                        <p class="text-muted max-width-300">Submit a job title and description in the analyzer form to run structural verification, vocabulary weight matching, and meta heuristics.</p>
+                    </div>
+                    {% endif %}
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- History Tab -->
+        <div class="tab-pane fade" id="history" role="tabpanel" aria-labelledby="history-tab">
+            <div class="card-custom p-4">
+                <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-3 mb-4">
+                    <h4 class="fw-bold mb-0 d-flex align-items-center">
+                        <i class="bi bi-clock-history text-primary me-2"></i> Scan History Logs
+                    </h4>
+                    <div class="d-flex gap-2">
+                        <input type="text" id="history-search" class="form-control form-control-custom form-control-sm rounded-pill" placeholder="Search title or company...">
+                        <a href="/export" class="btn btn-primary rounded-pill d-inline-flex align-items-center btn-sm text-white">
+                            <i class="bi bi-download me-2"></i> Export CSV
+                        </a>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-hover table-custom" id="history-table">
+                        <thead>
+                            <tr>
+                                <th>Timestamp</th>
+                                <th>Job Title</th>
+                                <th>Company</th>
+                                <th>Risk Score</th>
+                                <th>Confidence</th>
+                                <th>Prediction</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% if history %}
+                                {% for item in history %}
+                                <tr class="history-row">
+                                    <td class="text-muted">{{ item.timestamp }}</td>
+                                    <td class="fw-semibold row-title">{{ item.title }}</td>
+                                    <td class="row-company">{{ item.company or 'Unknown' }}</td>
+                                    <td>
+                                        <span class="badge {% if item.risk_score > 70 %}bg-danger{% elif item.risk_score > 35 %}bg-warning{% else %}bg-success{% endif %}">
+                                            {{ item.risk_score }}%
+                                        </span>
+                                    </td>
+                                    <td>{{ item.confidence | round(1) }}%</td>
+                                    <td>
+                                        {% if item.prediction == 1 %}
+                                            <span class="text-danger fw-bold"><i class="bi bi-x-circle-fill"></i> Fake</span>
+                                        {% else %}
+                                            <span class="text-success fw-bold"><i class="bi bi-check-circle-fill"></i> Genuine</span>
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            {% else %}
+                                <tr>
+                                    <td colspan="6" class="text-center text-muted py-4">No prediction logs available in history.</td>
+                                </tr>
+                            {% endif %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Model Performance Tab -->
+        <div class="tab-pane fade" id="analytics" role="tabpanel" aria-labelledby="analytics-tab">
+            <div class="card-custom p-4">
+                <h4 class="fw-bold mb-2 d-flex align-items-center">
+                    <i class="bi bi-graph-up-arrow text-primary me-2"></i> Model Performance Analytics
+                </h4>
+                <p class="text-muted small mb-4">Detailed visual performance benchmarks of the machine learning classifiers on the test dataset.</p>
+                
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="p-3 border rounded-3 bg-body-tertiary">
+                            <h6 class="fw-bold mb-2"><i class="bi bi-graph-up text-primary me-2"></i> Receiver Operating Characteristic (ROC)</h6>
+                            <p class="text-muted small">Displays model sensitivity vs. specificity. Higher Area Under Curve (AUC) shows better separation.</p>
+                            <div class="chart-container">
+                                <img src="/static/assets/roc_curve.png" alt="ROC Curve" class="chart-img" onerror="this.src='https://placehold.co/600x400?text=Run+Model+Training+First'">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="p-3 border rounded-3 bg-body-tertiary">
+                            <h6 class="fw-bold mb-2"><i class="bi bi-funnel text-primary me-2"></i> Precision-Recall Curve</h6>
+                            <p class="text-muted small">Critical benchmark for imbalanced data. Shows trade-offs between precision and recall rates.</p>
+                            <div class="chart-container">
+                                <img src="/static/assets/pr_curve.png" alt="Precision-Recall Curve" class="chart-img" onerror="this.src='https://placehold.co/600x400?text=Run+Model+Training+First'">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="p-3 border rounded-3 bg-body-tertiary">
+                            <h6 class="fw-bold mb-2"><i class="bi bi-grid-3x3-gap text-primary me-2"></i> Confusion Matrix (Tuned Random Forest)</h6>
+                            <p class="text-muted small">Displays actual vs. predicted classifications to isolate Type I and Type II predictions.</p>
+                            <div class="chart-container">
+                                <img src="/static/assets/confusion_matrix.png" alt="Confusion Matrix" class="chart-img" onerror="this.src='https://placehold.co/600x400?text=Run+Model+Training+First'">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="p-3 border rounded-3 bg-body-tertiary">
+                            <h6 class="fw-bold mb-2"><i class="bi bi-bar-chart-steps text-primary me-2"></i> Model Comparison Benchmarks</h6>
+                            <p class="text-muted small">Benchmarking accuracy, precision, recall, and F1 metrics across trained classifiers.</p>
+                            <div class="chart-container">
+                                <img src="/static/assets/model_comparison.png" alt="Model Comparison" class="chart-img" onerror="this.src='https://placehold.co/600x400?text=Run+Model+Training+First'">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Footer -->
+<footer class="footer mt-auto py-3 bg-body-tertiary border-top mt-5">
+    <div class="container text-center text-muted">
+        <small>© 2026 VeriWork AI. Structured Random Forest Fraud Classification. Supported by SQLite backend.</small>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Custom Script for Theme and Form Behavior -->
+<script>
+    // Light / Dark mode toggler
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const htmlElement = document.documentElement;
+
+    // Check Local Storage
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    htmlElement.setAttribute('data-theme', savedTheme);
+    updateThemeIcon(savedTheme);
+
+    themeToggleBtn.addEventListener('click', () => {
+        const currentTheme = htmlElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        
+        htmlElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme);
+    });
+
+    function updateThemeIcon(theme) {
+        if (theme === 'dark') {
+            themeIcon.className = 'bi bi-sun-fill text-warning';
+        } else {
+            themeIcon.className = 'bi bi-moon-fill';
+        }
+    }
+
+    // Scanning visual effect
+    const form = document.getElementById('predict-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const scannerView = document.getElementById('scanner-view');
+
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            // Show scanning state
+            form.style.display = 'none';
+            scannerView.style.display = 'block';
+        });
+    }
+
+    // Search function for history table
+    const searchInput = document.getElementById('history-search');
+    if (searchInput) {
+        searchInput.addEventListener('keyup', () => {
+            const query = searchInput.value.toLowerCase();
+            const rows = document.querySelectorAll('.history-row');
+            
+            rows.forEach(row => {
+                const title = row.querySelector('.row-title').textContent.toLowerCase();
+                const company = row.querySelector('.row-company').textContent.toLowerCase();
+                
+                if (title.includes(query) || company.includes(query)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+    }
+</script>
+</body>
+</html>

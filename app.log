@@ -1,0 +1,239 @@
+2026-08-01 14:49:34,647 [INFO] SQLite database initialized successfully.
+2026-08-01 14:49:34,915 [INFO] Machine Learning model and vectorizer loaded successfully.
+2026-08-01 14:49:34,920 [INFO] Feature coefficients loaded successfully.
+2026-08-01 14:49:34,946 [WARNING]  * Debugger is active!
+2026-08-01 14:49:34,958 [INFO]  * Debugger PIN: 132-329-982
+2026-08-01 14:50:44,650 [INFO] SQLite database initialized successfully.
+2026-08-01 14:50:44,946 [INFO] Machine Learning model and vectorizer loaded successfully.
+2026-08-01 14:50:44,966 [INFO] Feature coefficients loaded successfully.
+2026-08-01 14:52:26,211 [INFO]  * Detected change in 'C:\\Users\\LIKHITH\\OneDrive\\Desktop\\fake-job-detection\\app.py', reloading
+2026-08-01 14:52:31,751 [INFO] SQLite database initialized successfully.
+2026-08-01 14:52:32,036 [INFO] Machine Learning model and vectorizer loaded successfully.
+2026-08-01 14:52:32,041 [INFO] Feature coefficients loaded successfully.
+2026-08-01 14:52:32,072 [WARNING]  * Debugger is active!
+2026-08-01 14:52:32,077 [INFO]  * Debugger PIN: 132-329-982
+2026-08-01 14:52:57,328 [INFO]  * Detected change in 'C:\\Users\\LIKHITH\\OneDrive\\Desktop\\fake-job-detection\\scratch\\evaluate_models.py', reloading
+2026-08-01 14:53:03,549 [INFO] SQLite database initialized successfully.
+2026-08-01 14:53:03,805 [INFO] Machine Learning model and vectorizer loaded successfully.
+2026-08-01 14:53:03,810 [INFO] Feature coefficients loaded successfully.
+2026-08-01 14:53:03,828 [WARNING]  * Debugger is active!
+2026-08-01 14:53:03,832 [INFO]  * Debugger PIN: 132-329-982
+2026-08-01 14:53:20,617 [INFO] SQLite database initialized successfully.
+2026-08-01 14:53:20,848 [INFO] Machine Learning model and vectorizer loaded successfully.
+2026-08-01 14:53:20,853 [INFO] Feature coefficients loaded successfully.
+2026-08-01 14:54:56,257 [INFO] SQLite database initialized successfully.
+2026-08-01 14:54:56,481 [INFO] Machine Learning model and vectorizer loaded successfully.
+2026-08-01 14:54:56,485 [INFO] Feature coefficients loaded successfully.
+2026-08-01 14:54:56,516 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-08-01 14:54:56,517 [INFO] [33mPress CTRL+C to quit[0m
+2026-08-01 14:54:56,519 [INFO]  * Restarting with stat
+2026-08-01 14:55:00,561 [INFO] SQLite database initialized successfully.
+2026-08-01 14:55:00,773 [INFO] Machine Learning model and vectorizer loaded successfully.
+2026-08-01 14:55:00,778 [INFO] Feature coefficients loaded successfully.
+2026-08-01 14:55:00,796 [WARNING]  * Debugger is active!
+2026-08-01 14:55:00,801 [INFO]  * Debugger PIN: 132-329-982
+2026-08-01 14:55:09,000 [INFO] 127.0.0.1 - - [01/Aug/2026 14:55:09] "GET / HTTP/1.1" 200 -
+2026-08-01 14:55:09,190 [INFO] 127.0.0.1 - - [01/Aug/2026 14:55:09] "GET /static/assets/roc_curve.png HTTP/1.1" 200 -
+2026-08-01 14:55:09,210 [INFO] 127.0.0.1 - - [01/Aug/2026 14:55:09] "GET /static/assets/pr_curve.png HTTP/1.1" 200 -
+2026-08-01 14:55:09,226 [INFO] 127.0.0.1 - - [01/Aug/2026 14:55:09] "GET /static/assets/model_comparison.png HTTP/1.1" 200 -
+2026-08-01 14:55:09,228 [INFO] 127.0.0.1 - - [01/Aug/2026 14:55:09] "GET /static/assets/confusion_matrix.png HTTP/1.1" 200 -
+2026-08-01 14:56:28,877 [INFO] 127.0.0.1 - - [01/Aug/2026 14:56:28] "POST /predict HTTP/1.1" 200 -
+2026-08-01 14:56:28,893 [INFO] 127.0.0.1 - - [01/Aug/2026 14:56:28] "[36mGET /static/assets/roc_curve.png HTTP/1.1[0m" 304 -
+2026-08-01 14:56:28,894 [INFO] 127.0.0.1 - - [01/Aug/2026 14:56:28] "[36mGET /static/assets/pr_curve.png HTTP/1.1[0m" 304 -
+2026-08-01 14:56:28,913 [INFO] 127.0.0.1 - - [01/Aug/2026 14:56:28] "[36mGET /static/assets/confusion_matrix.png HTTP/1.1[0m" 304 -
+2026-08-01 14:56:28,915 [INFO] 127.0.0.1 - - [01/Aug/2026 14:56:28] "[36mGET /static/assets/model_comparison.png HTTP/1.1[0m" 304 -
+2026-08-01 14:59:00,004 [INFO] 127.0.0.1 - - [01/Aug/2026 14:59:00] "GET / HTTP/1.1" 200 -
+2026-08-01 14:59:00,083 [INFO] 127.0.0.1 - - [01/Aug/2026 14:59:00] "[36mGET /static/assets/roc_curve.png HTTP/1.1[0m" 304 -
+2026-08-01 14:59:00,094 [INFO] 127.0.0.1 - - [01/Aug/2026 14:59:00] "[36mGET /static/assets/pr_curve.png HTTP/1.1[0m" 304 -
+2026-08-01 14:59:00,115 [INFO] 127.0.0.1 - - [01/Aug/2026 14:59:00] "[36mGET /static/assets/model_comparison.png HTTP/1.1[0m" 304 -
+2026-08-01 14:59:00,124 [INFO] 127.0.0.1 - - [01/Aug/2026 14:59:00] "[36mGET /static/assets/confusion_matrix.png HTTP/1.1[0m" 304 -
+2026-08-01 14:59:33,429 [INFO] 127.0.0.1 - - [01/Aug/2026 14:59:33] "POST /predict HTTP/1.1" 200 -
+2026-08-01 14:59:33,447 [INFO] 127.0.0.1 - - [01/Aug/2026 14:59:33] "[36mGET /static/assets/roc_curve.png HTTP/1.1[0m" 304 -
+2026-08-01 14:59:33,447 [INFO] 127.0.0.1 - - [01/Aug/2026 14:59:33] "[36mGET /static/assets/pr_curve.png HTTP/1.1[0m" 304 -
+2026-08-01 14:59:33,460 [INFO] 127.0.0.1 - - [01/Aug/2026 14:59:33] "[36mGET /static/assets/confusion_matrix.png HTTP/1.1[0m" 304 -
+2026-08-01 14:59:33,461 [INFO] 127.0.0.1 - - [01/Aug/2026 14:59:33] "[36mGET /static/assets/model_comparison.png HTTP/1.1[0m" 304 -
+2026-08-01 15:08:29,556 [INFO]  * Detected change in 'C:\\Users\\LIKHITH\\OneDrive\\Desktop\\fake-job-detection\\app.py', reloading
+2026-08-01 15:08:30,613 [INFO]  * Restarting with stat
+2026-08-01 15:08:36,776 [INFO] SQLite database initialized successfully.
+2026-08-01 15:08:37,054 [INFO] Machine Learning model and vectorizer loaded successfully.
+2026-08-01 15:08:37,058 [INFO] Feature coefficients loaded successfully.
+2026-08-01 15:08:37,080 [WARNING]  * Debugger is active!
+2026-08-01 15:08:37,085 [INFO]  * Debugger PIN: 132-329-982
+2026-08-01 15:08:57,290 [INFO]  * Detected change in 'C:\\Users\\LIKHITH\\OneDrive\\Desktop\\fake-job-detection\\app.py', reloading
+2026-08-01 15:08:57,933 [INFO]  * Restarting with stat
+2026-08-01 15:09:15,716 [INFO] SQLite database initialized successfully.
+2026-08-01 15:09:15,927 [INFO] Machine Learning model and vectorizer loaded successfully.
+2026-08-01 15:09:15,931 [INFO] Feature coefficients loaded successfully.
+2026-08-01 15:09:15,961 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-08-01 15:09:15,961 [INFO] [33mPress CTRL+C to quit[0m
+2026-08-01 15:09:15,965 [INFO]  * Restarting with stat
+2026-08-01 15:09:20,059 [INFO] SQLite database initialized successfully.
+2026-08-01 15:09:20,273 [INFO] Machine Learning model and vectorizer loaded successfully.
+2026-08-01 15:09:20,278 [INFO] Feature coefficients loaded successfully.
+2026-08-01 15:09:20,296 [WARNING]  * Debugger is active!
+2026-08-01 15:09:20,300 [INFO]  * Debugger PIN: 132-329-982
+2026-08-01 15:09:28,954 [INFO] 127.0.0.1 - - [01/Aug/2026 15:09:28] "GET / HTTP/1.1" 200 -
+2026-08-01 15:09:29,148 [INFO] 127.0.0.1 - - [01/Aug/2026 15:09:29] "[36mGET /static/assets/roc_curve.png HTTP/1.1[0m" 304 -
+2026-08-01 15:09:29,158 [INFO] 127.0.0.1 - - [01/Aug/2026 15:09:29] "[36mGET /static/assets/confusion_matrix.png HTTP/1.1[0m" 304 -
+2026-08-01 15:09:29,186 [INFO] 127.0.0.1 - - [01/Aug/2026 15:09:29] "[36mGET /static/assets/pr_curve.png HTTP/1.1[0m" 304 -
+2026-08-01 15:09:29,188 [INFO] 127.0.0.1 - - [01/Aug/2026 15:09:29] "[36mGET /static/assets/model_comparison.png HTTP/1.1[0m" 304 -
+2026-08-01 15:10:53,723 [INFO] 127.0.0.1 - - [01/Aug/2026 15:10:53] "POST /predict HTTP/1.1" 200 -
+2026-08-01 15:10:53,738 [INFO] 127.0.0.1 - - [01/Aug/2026 15:10:53] "[36mGET /static/assets/roc_curve.png HTTP/1.1[0m" 304 -
+2026-08-01 15:10:53,741 [INFO] 127.0.0.1 - - [01/Aug/2026 15:10:53] "[36mGET /static/assets/pr_curve.png HTTP/1.1[0m" 304 -
+2026-08-01 15:10:53,753 [INFO] 127.0.0.1 - - [01/Aug/2026 15:10:53] "[36mGET /static/assets/confusion_matrix.png HTTP/1.1[0m" 304 -
+2026-08-01 15:10:53,759 [INFO] 127.0.0.1 - - [01/Aug/2026 15:10:53] "[36mGET /static/assets/model_comparison.png HTTP/1.1[0m" 304 -
+2026-08-01 15:13:13,137 [INFO] 127.0.0.1 - - [01/Aug/2026 15:13:13] "POST /predict HTTP/1.1" 200 -
+2026-08-01 15:13:13,157 [INFO] 127.0.0.1 - - [01/Aug/2026 15:13:13] "[36mGET /static/assets/roc_curve.png HTTP/1.1[0m" 304 -
+2026-08-01 15:13:13,158 [INFO] 127.0.0.1 - - [01/Aug/2026 15:13:13] "[36mGET /static/assets/pr_curve.png HTTP/1.1[0m" 304 -
+2026-08-01 15:13:13,171 [INFO] 127.0.0.1 - - [01/Aug/2026 15:13:13] "[36mGET /static/assets/confusion_matrix.png HTTP/1.1[0m" 304 -
+2026-08-01 15:13:13,174 [INFO] 127.0.0.1 - - [01/Aug/2026 15:13:13] "[36mGET /static/assets/model_comparison.png HTTP/1.1[0m" 304 -
+2026-08-01 15:14:27,018 [INFO] 127.0.0.1 - - [01/Aug/2026 15:14:27] "GET / HTTP/1.1" 200 -
+2026-08-01 15:14:27,044 [INFO] 127.0.0.1 - - [01/Aug/2026 15:14:27] "[36mGET /static/assets/roc_curve.png HTTP/1.1[0m" 304 -
+2026-08-01 15:14:27,045 [INFO] 127.0.0.1 - - [01/Aug/2026 15:14:27] "[36mGET /static/assets/pr_curve.png HTTP/1.1[0m" 304 -
+2026-08-01 15:14:27,058 [INFO] 127.0.0.1 - - [01/Aug/2026 15:14:27] "[36mGET /static/assets/confusion_matrix.png HTTP/1.1[0m" 304 -
+2026-08-01 15:14:27,059 [INFO] 127.0.0.1 - - [01/Aug/2026 15:14:27] "[36mGET /static/assets/model_comparison.png HTTP/1.1[0m" 304 -
+2026-08-01 15:43:21,699 [INFO] SQLite database initialized successfully.
+2026-08-01 15:43:21,801 [INFO] Machine Learning model and vectorizer loaded successfully.
+2026-08-01 15:43:21,826 [INFO] Feature coefficients loaded successfully.
+2026-08-01 15:43:21,865 [INFO] Machine Learning model and vectorizer loaded successfully.
+2026-08-01 15:43:21,872 [INFO] Feature coefficients loaded successfully.
+2026-08-01 15:43:42,036 [INFO]  * Detected change in 'C:\\Users\\LIKHITH\\OneDrive\\Desktop\\fake-job-detection\\scratch\\test_predict.py', reloading
+2026-08-01 15:43:43,101 [INFO]  * Restarting with stat
+2026-08-01 15:43:50,273 [INFO] SQLite database initialized successfully.
+2026-08-01 15:43:50,364 [INFO] Machine Learning model and vectorizer loaded successfully.
+2026-08-01 15:43:50,369 [INFO] Feature coefficients loaded successfully.
+2026-08-01 15:43:50,394 [WARNING]  * Debugger is active!
+2026-08-01 15:43:50,399 [INFO]  * Debugger PIN: 132-329-982
+2026-08-01 15:44:10,721 [INFO] SQLite database initialized successfully.
+2026-08-01 15:44:10,838 [INFO] Machine Learning model and vectorizer loaded successfully.
+2026-08-01 15:44:10,843 [INFO] Feature coefficients loaded successfully.
+2026-08-01 15:44:10,886 [INFO] Machine Learning model and vectorizer loaded successfully.
+2026-08-01 15:44:10,893 [INFO] Feature coefficients loaded successfully.
+2026-08-01 15:46:27,719 [INFO] 127.0.0.1 - - [01/Aug/2026 15:46:27] "GET / HTTP/1.1" 200 -
+2026-08-01 15:46:28,189 [INFO] 127.0.0.1 - - [01/Aug/2026 15:46:28] "GET / HTTP/1.1" 200 -
+2026-08-01 15:46:28,219 [INFO] 127.0.0.1 - - [01/Aug/2026 15:46:28] "[36mGET /static/assets/roc_curve.png HTTP/1.1[0m" 304 -
+2026-08-01 15:46:28,356 [INFO] 127.0.0.1 - - [01/Aug/2026 15:46:28] "[36mGET /static/assets/model_comparison.png HTTP/1.1[0m" 304 -
+2026-08-01 15:46:28,363 [INFO] 127.0.0.1 - - [01/Aug/2026 15:46:28] "[36mGET /static/assets/pr_curve.png HTTP/1.1[0m" 304 -
+2026-08-01 15:46:28,400 [INFO] 127.0.0.1 - - [01/Aug/2026 15:46:28] "[36mGET /static/assets/roc_curve.png HTTP/1.1[0m" 304 -
+2026-08-01 15:46:28,411 [INFO] 127.0.0.1 - - [01/Aug/2026 15:46:28] "[36mGET /static/assets/model_comparison.png HTTP/1.1[0m" 304 -
+2026-08-01 15:46:28,430 [INFO] 127.0.0.1 - - [01/Aug/2026 15:46:28] "[36mGET /static/assets/pr_curve.png HTTP/1.1[0m" 304 -
+2026-08-01 15:46:28,474 [INFO] 127.0.0.1 - - [01/Aug/2026 15:46:28] "[36mGET /static/assets/confusion_matrix.png HTTP/1.1[0m" 304 -
+2026-08-01 15:46:28,526 [INFO] 127.0.0.1 - - [01/Aug/2026 15:46:28] "[36mGET /static/assets/confusion_matrix.png HTTP/1.1[0m" 304 -
+2026-08-01 15:46:32,294 [INFO] 127.0.0.1 - - [01/Aug/2026 15:46:32] "GET / HTTP/1.1" 200 -
+2026-08-01 15:46:32,344 [INFO] 127.0.0.1 - - [01/Aug/2026 15:46:32] "[36mGET /static/assets/pr_curve.png HTTP/1.1[0m" 304 -
+2026-08-01 15:46:32,345 [INFO] 127.0.0.1 - - [01/Aug/2026 15:46:32] "[36mGET /static/assets/roc_curve.png HTTP/1.1[0m" 304 -
+2026-08-01 15:46:32,363 [INFO] 127.0.0.1 - - [01/Aug/2026 15:46:32] "[36mGET /static/assets/confusion_matrix.png HTTP/1.1[0m" 304 -
+2026-08-01 15:46:32,367 [INFO] 127.0.0.1 - - [01/Aug/2026 15:46:32] "[36mGET /static/assets/model_comparison.png HTTP/1.1[0m" 304 -
+2026-08-01 15:46:58,077 [INFO] SQLite database initialized successfully.
+2026-08-01 15:46:58,306 [INFO] Machine Learning model and vectorizer loaded successfully.
+2026-08-01 15:46:58,319 [INFO] Feature coefficients loaded successfully.
+2026-08-01 15:46:58,424 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-08-01 15:46:58,484 [INFO] [33mPress CTRL+C to quit[0m
+2026-08-01 15:46:58,564 [INFO]  * Restarting with stat
+2026-08-01 15:47:08,398 [INFO] SQLite database initialized successfully.
+2026-08-01 15:47:08,577 [INFO] Machine Learning model and vectorizer loaded successfully.
+2026-08-01 15:47:08,585 [INFO] Feature coefficients loaded successfully.
+2026-08-01 15:47:08,624 [WARNING]  * Debugger is active!
+2026-08-01 15:47:08,636 [INFO]  * Debugger PIN: 132-329-982
+2026-08-01 15:47:09,914 [INFO] 127.0.0.1 - - [01/Aug/2026 15:47:09] "GET / HTTP/1.1" 200 -
+2026-08-01 15:47:09,915 [INFO] 127.0.0.1 - - [01/Aug/2026 15:47:09] "GET / HTTP/1.1" 200 -
+2026-08-01 15:47:10,195 [INFO] 127.0.0.1 - - [01/Aug/2026 15:47:10] "[36mGET /static/assets/confusion_matrix.png HTTP/1.1[0m" 304 -
+2026-08-01 15:47:10,204 [INFO] 127.0.0.1 - - [01/Aug/2026 15:47:10] "[36mGET /static/assets/model_comparison.png HTTP/1.1[0m" 304 -
+2026-08-01 15:47:10,220 [INFO] 127.0.0.1 - - [01/Aug/2026 15:47:10] "[36mGET /static/assets/pr_curve.png HTTP/1.1[0m" 304 -
+2026-08-01 15:47:10,222 [INFO] 127.0.0.1 - - [01/Aug/2026 15:47:10] "[36mGET /static/assets/roc_curve.png HTTP/1.1[0m" 304 -
+2026-08-01 21:26:34,632 [INFO] SQLite database initialized successfully.
+2026-08-01 21:26:34,743 [INFO] Machine Learning model and vectorizer loaded successfully.
+2026-08-01 21:26:34,750 [INFO] Feature coefficients loaded successfully.
+2026-08-01 21:26:34,799 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-08-01 21:26:34,800 [INFO] [33mPress CTRL+C to quit[0m
+2026-08-01 21:26:34,804 [INFO]  * Restarting with stat
+2026-08-01 21:26:40,028 [INFO] SQLite database initialized successfully.
+2026-08-01 21:26:40,141 [INFO] Machine Learning model and vectorizer loaded successfully.
+2026-08-01 21:26:40,164 [INFO] Feature coefficients loaded successfully.
+2026-08-01 21:26:40,191 [WARNING]  * Debugger is active!
+2026-08-01 21:26:40,197 [INFO]  * Debugger PIN: 132-329-982
+2026-08-01 21:26:44,579 [INFO] 127.0.0.1 - - [01/Aug/2026 21:26:44] "GET / HTTP/1.1" 200 -
+2026-08-01 21:26:44,883 [INFO] 127.0.0.1 - - [01/Aug/2026 21:26:44] "GET /static/assets/roc_curve.png HTTP/1.1" 200 -
+2026-08-01 21:26:44,887 [INFO] 127.0.0.1 - - [01/Aug/2026 21:26:44] "GET /static/assets/pr_curve.png HTTP/1.1" 200 -
+2026-08-01 21:26:45,024 [INFO] 127.0.0.1 - - [01/Aug/2026 21:26:45] "GET /static/assets/confusion_matrix.png HTTP/1.1" 200 -
+2026-08-01 21:26:45,025 [INFO] 127.0.0.1 - - [01/Aug/2026 21:26:45] "GET /static/assets/model_comparison.png HTTP/1.1" 200 -
+2026-08-01 21:27:31,169 [INFO] 127.0.0.1 - - [01/Aug/2026 21:27:31] "GET /export HTTP/1.1" 200 -
+2026-08-02 13:53:31,598 [INFO] SQLite database initialized successfully.
+2026-08-02 13:53:31,784 [INFO] Machine Learning model and vectorizer loaded successfully.
+2026-08-02 13:53:31,814 [INFO] Feature coefficients loaded successfully.
+2026-08-02 13:53:31,956 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-08-02 13:53:31,957 [INFO] [33mPress CTRL+C to quit[0m
+2026-08-02 13:53:31,962 [INFO]  * Restarting with stat
+2026-08-02 13:53:38,505 [INFO] SQLite database initialized successfully.
+2026-08-02 13:53:38,621 [INFO] Machine Learning model and vectorizer loaded successfully.
+2026-08-02 13:53:38,627 [INFO] Feature coefficients loaded successfully.
+2026-08-02 13:53:38,663 [WARNING]  * Debugger is active!
+2026-08-02 13:53:38,674 [INFO]  * Debugger PIN: 132-329-982
+2026-08-02 13:53:43,353 [INFO] 127.0.0.1 - - [02/Aug/2026 13:53:43] "GET / HTTP/1.1" 200 -
+2026-08-02 13:53:43,765 [INFO] 127.0.0.1 - - [02/Aug/2026 13:53:43] "[36mGET /static/assets/roc_curve.png HTTP/1.1[0m" 304 -
+2026-08-02 13:53:43,781 [INFO] 127.0.0.1 - - [02/Aug/2026 13:53:43] "[36mGET /static/assets/pr_curve.png HTTP/1.1[0m" 304 -
+2026-08-02 13:53:43,782 [INFO] 127.0.0.1 - - [02/Aug/2026 13:53:43] "[36mGET /static/assets/model_comparison.png HTTP/1.1[0m" 304 -
+2026-08-02 13:53:43,787 [INFO] 127.0.0.1 - - [02/Aug/2026 13:53:43] "[36mGET /static/assets/confusion_matrix.png HTTP/1.1[0m" 304 -
+2026-08-02 13:59:32,646 [INFO] 127.0.0.1 - - [02/Aug/2026 13:59:32] "POST /predict HTTP/1.1" 200 -
+2026-08-02 13:59:32,702 [INFO] 127.0.0.1 - - [02/Aug/2026 13:59:32] "[36mGET /static/assets/roc_curve.png HTTP/1.1[0m" 304 -
+2026-08-02 13:59:32,708 [INFO] 127.0.0.1 - - [02/Aug/2026 13:59:32] "[36mGET /static/assets/pr_curve.png HTTP/1.1[0m" 304 -
+2026-08-02 13:59:32,720 [INFO] 127.0.0.1 - - [02/Aug/2026 13:59:32] "[36mGET /static/assets/confusion_matrix.png HTTP/1.1[0m" 304 -
+2026-08-02 13:59:32,730 [INFO] 127.0.0.1 - - [02/Aug/2026 13:59:32] "[36mGET /static/assets/model_comparison.png HTTP/1.1[0m" 304 -
+2026-08-02 14:01:52,248 [INFO] 127.0.0.1 - - [02/Aug/2026 14:01:52] "POST /predict HTTP/1.1" 200 -
+2026-08-02 14:01:52,292 [INFO] 127.0.0.1 - - [02/Aug/2026 14:01:52] "[36mGET /static/assets/roc_curve.png HTTP/1.1[0m" 304 -
+2026-08-02 14:01:52,299 [INFO] 127.0.0.1 - - [02/Aug/2026 14:01:52] "[36mGET /static/assets/pr_curve.png HTTP/1.1[0m" 304 -
+2026-08-02 14:01:52,303 [INFO] 127.0.0.1 - - [02/Aug/2026 14:01:52] "[36mGET /static/assets/confusion_matrix.png HTTP/1.1[0m" 304 -
+2026-08-02 14:01:52,307 [INFO] 127.0.0.1 - - [02/Aug/2026 14:01:52] "[36mGET /static/assets/model_comparison.png HTTP/1.1[0m" 304 -
+2026-10-25 21:23:58,698 [INFO] SQLite database initialized successfully.
+2026-10-25 21:23:58,789 [INFO] Machine Learning model and vectorizer loaded successfully.
+2026-10-25 21:23:58,795 [INFO] Feature coefficients loaded successfully.
+2026-10-25 21:23:58,938 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-10-25 21:23:58,939 [INFO] [33mPress CTRL+C to quit[0m
+2026-10-25 21:23:58,982 [INFO]  * Restarting with watchdog (windowsapi)
+2026-10-25 21:24:06,275 [INFO] SQLite database initialized successfully.
+2026-10-25 21:24:06,325 [INFO] Machine Learning model and vectorizer loaded successfully.
+2026-10-25 21:24:06,331 [INFO] Feature coefficients loaded successfully.
+2026-10-25 21:24:06,366 [WARNING]  * Debugger is active!
+2026-10-25 21:24:06,391 [INFO]  * Debugger PIN: 112-822-565
+2026-10-25 21:24:11,570 [INFO]  * Detected change in 'C:\\Python314\\Lib\\encodings\\unicode_escape.py', reloading
+2026-10-25 21:24:11,590 [INFO] 127.0.0.1 - - [25/Oct/2026 21:24:11] "GET / HTTP/1.1" 200 -
+2026-10-25 21:24:12,394 [INFO]  * Restarting with watchdog (windowsapi)
+2026-10-25 21:24:19,775 [INFO] SQLite database initialized successfully.
+2026-10-25 21:24:19,825 [INFO] Machine Learning model and vectorizer loaded successfully.
+2026-10-25 21:24:19,830 [INFO] Feature coefficients loaded successfully.
+2026-10-25 21:24:19,865 [WARNING]  * Debugger is active!
+2026-10-25 21:24:19,869 [INFO]  * Debugger PIN: 112-822-565
+2026-10-25 21:24:20,127 [INFO] 127.0.0.1 - - [25/Oct/2026 21:24:20] "[36mGET /static/assets/pr_curve.png HTTP/1.1[0m" 304 -
+2026-10-25 21:24:20,129 [INFO] 127.0.0.1 - - [25/Oct/2026 21:24:20] "[36mGET /static/assets/confusion_matrix.png HTTP/1.1[0m" 304 -
+2026-10-25 21:24:20,131 [INFO] 127.0.0.1 - - [25/Oct/2026 21:24:20] "[36mGET /static/assets/model_comparison.png HTTP/1.1[0m" 304 -
+2026-10-25 21:24:20,131 [INFO] 127.0.0.1 - - [25/Oct/2026 21:24:20] "[36mGET /static/assets/roc_curve.png HTTP/1.1[0m" 304 -
+2026-10-25 21:53:00,460 [INFO] 127.0.0.1 - - [25/Oct/2026 21:53:00] "[31m[1mGET /predict HTTP/1.1[0m" 405 -
+2026-10-25 21:53:23,833 [INFO] SQLite database initialized successfully.
+2026-10-25 21:53:23,888 [INFO] Machine Learning model and vectorizer loaded successfully.
+2026-10-25 21:53:23,893 [INFO] Feature coefficients loaded successfully.
+2026-10-25 21:53:23,960 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-10-25 21:53:23,961 [INFO] [33mPress CTRL+C to quit[0m
+2026-10-25 21:53:23,996 [INFO]  * Restarting with watchdog (windowsapi)
+2026-10-25 21:53:30,111 [INFO] SQLite database initialized successfully.
+2026-10-25 21:53:30,158 [INFO] Machine Learning model and vectorizer loaded successfully.
+2026-10-25 21:53:30,162 [INFO] Feature coefficients loaded successfully.
+2026-10-25 21:53:30,198 [WARNING]  * Debugger is active!
+2026-10-25 21:53:30,202 [INFO]  * Debugger PIN: 112-822-565
+2026-10-25 21:53:49,138 [INFO] 127.0.0.1 - - [25/Oct/2026 21:53:49] "GET / HTTP/1.1" 200 -
+2026-10-25 21:53:49,231 [INFO] 127.0.0.1 - - [25/Oct/2026 21:53:49] "GET /static/assets/roc_curve.png HTTP/1.1" 200 -
+2026-10-25 21:53:49,234 [INFO] 127.0.0.1 - - [25/Oct/2026 21:53:49] "GET /static/assets/pr_curve.png HTTP/1.1" 200 -
+2026-10-25 21:53:49,240 [INFO] 127.0.0.1 - - [25/Oct/2026 21:53:49] "GET /static/assets/confusion_matrix.png HTTP/1.1" 200 -
+2026-10-25 21:53:49,247 [INFO] 127.0.0.1 - - [25/Oct/2026 21:53:49] "GET /static/assets/model_comparison.png HTTP/1.1" 200 -
+2026-10-25 21:53:49,497 [INFO] 127.0.0.1 - - [25/Oct/2026 21:53:49] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-10-25 21:56:11,434 [INFO] 127.0.0.1 - - [25/Oct/2026 21:56:11] "POST /predict HTTP/1.1" 200 -
+2026-10-25 21:56:11,508 [INFO] 127.0.0.1 - - [25/Oct/2026 21:56:11] "[36mGET /static/assets/roc_curve.png HTTP/1.1[0m" 304 -
+2026-10-25 21:56:11,519 [INFO] 127.0.0.1 - - [25/Oct/2026 21:56:11] "[36mGET /static/assets/pr_curve.png HTTP/1.1[0m" 304 -
+2026-10-25 21:56:11,524 [INFO] 127.0.0.1 - - [25/Oct/2026 21:56:11] "[36mGET /static/assets/confusion_matrix.png HTTP/1.1[0m" 304 -
+2026-10-25 21:56:11,533 [INFO] 127.0.0.1 - - [25/Oct/2026 21:56:11] "[36mGET /static/assets/model_comparison.png HTTP/1.1[0m" 304 -
